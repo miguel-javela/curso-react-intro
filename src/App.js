@@ -1,4 +1,3 @@
-import './App.css';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
@@ -14,7 +13,7 @@ const defaulTodos = [
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <TodoCounter completed={16} total={25}/>
       <TodoSearch/>
 
@@ -26,7 +25,7 @@ function App() {
 
       <CreateTodoButton/>
 
-    </React.Fragment>
+    </>
   );
 }
 
