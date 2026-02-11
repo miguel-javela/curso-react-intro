@@ -1,9 +1,5 @@
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
 import React from 'react';
+import { AppUI } from './AppUI';
 import { useLocalStorage } from './useLocalStorage';
 
 // const defaulTodos = [
@@ -49,25 +45,16 @@ function App() {
     saveTodos(newTodos);
   }
 
-
-  return (
-    <>
-      <TodoCounter completed={completedTodos} total={totalTodos}/>
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
-
-      <TodoList>
-        {searchedTodos.map(todo => (
-          <TodoItem
-            key={todo.text} text={todo.text} completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-
-      <CreateTodoButton/>
-
-    </>
+  return(
+    <AppUI 
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 }
 
