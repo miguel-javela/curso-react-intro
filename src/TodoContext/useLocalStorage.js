@@ -35,3 +35,12 @@ function useLocalStorage(itemName, initialValue){
 }
 
 export { useLocalStorage };
+
+// const defaulTodos = [
+//   {text: 'Cortar cebolla', completed: true},
+//   {text: 'Tomar el curso de intro a React', completed: false},
+//   {text: 'Llorar con la llorona', completed: false}
+// ];
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaulTodos));
+// localStorage.removeItem('TODOS_V1');
