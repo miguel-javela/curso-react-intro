@@ -11,11 +11,12 @@ import { EmptyTodos } from '../EmptyTodos';
 import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 function App() {
     const {
         error, loading, searchedTodos, completeTodo, deleteTodo, openModal, setOpenModal,
-        totalTodos, completedTodos, searchValue, setSearchValue, addTodo
+        totalTodos, completedTodos, searchValue, setSearchValue, addTodo, sincronizeTodos
     } = useTodos();
 
     return (
@@ -52,13 +53,15 @@ function App() {
                 )}
             </TodoList>
 
-            <CreateTodoButton setOpenModal={setOpenModal}/>
-
             {openModal && (
                 <Modal>
                     <TodoForm addTodo={addTodo} setOpenModal={setOpenModal}/>
                 </Modal>
             )}
+
+            <CreateTodoButton setOpenModal={setOpenModal}/>
+
+            <ChangeAlertWithStorageListener sincronize={sincronizeTodos}/>
         </>
     );
 }
