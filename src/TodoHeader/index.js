@@ -2,7 +2,7 @@
 import React from "react"
 
 function TodoHeader( {children, loading} ){    
-    React.Children.toArray(children)
+    //React.Children.toArray(children)
 
     return (
         <header>

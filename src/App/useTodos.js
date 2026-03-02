@@ -6,6 +6,7 @@ function useTodos(){
     const {
         item: todos, saveItem: saveTodos, sincronizeItem: sincronizeTodos,loading, error
     } = useLocalStorage('TODOS_V1', []);
+    
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
 
@@ -14,9 +15,9 @@ function useTodos(){
 
     const searchedTodos = todos.filter(
         (todo) => {
-        const todoText = todo.text.toLowerCase();
-        const searchText = searchValue.toLowerCase();
-        return todoText.includes(searchText);
+            const todoText = todo.text.toLowerCase();
+            const searchText = searchValue.toLowerCase();
+            return todoText.includes(searchText);
         }
     );
 
@@ -45,10 +46,8 @@ function useTodos(){
     };
 
     return {
-        loading, error, totalTodos,
-        completedTodos, searchValue, setSearchValue,
-        searchedTodos, completeTodo, deleteTodo,
-        openModal, setOpenModal, addTodo,
+        loading, error, totalTodos, completedTodos, searchValue, setSearchValue,
+        searchedTodos, completeTodo, deleteTodo, openModal, setOpenModal, addTodo,
         sincronizeTodos
     };
 }
