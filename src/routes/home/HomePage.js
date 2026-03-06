@@ -47,6 +47,7 @@ function HomePage() {
                 {todo => (
                     <TodoItem
                         key={todo.text} text={todo.text} completed={todo.completed}
+                        onEdit={() => console.log("editar todo")}
                         onComplete={() => completeTodo(todo.text)}
                         onDelete={() => deleteTodo(todo.text)}
                     />
