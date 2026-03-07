@@ -49,22 +49,15 @@ function HomePage() {
                 {todo => (
                     <TodoItem
                         key={todo.id} text={todo.text} completed={todo.completed}
-                        onEdit={() => navigate(`/edit/${todo.id}`)}
+                        onEdit={() => navigate(`/edit/${todo.id}`, {state:{ todo }} )}
                         onComplete={() => completeTodo(todo.id)}
                         onDelete={() => deleteTodo(todo.id)}
                     />
                 )}
             </TodoList>
 
-            {/* {openModal && (
-                <Modal>
-                    <TodoForm addTodo={addTodo} setOpenModal={setOpenModal}/>
-                </Modal>
-            )} */}
-
             <CreateTodoButton
                 onClick ={() => navigate('/new')}
-                // setOpenModal={setOpenModal}
             />
 
             <ChangeAlert sincronize={sincronizeTodos}/>
