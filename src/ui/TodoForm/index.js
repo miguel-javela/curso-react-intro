@@ -7,9 +7,9 @@ function TodoForm(props){
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
     const onSubmit = (event) => {
-        event.preventDefault();
-        navigate('/');
+        event.preventDefault();        
         props.submirEvent(newTodoValue);
+        navigate('/');
     }
 
     const onCancel = () => {
